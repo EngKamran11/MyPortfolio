@@ -91,8 +91,9 @@ function HomePage() {
             </div>
 
             {/* Heart-framed monogram avatar */}
-            <div className="relative mx-auto">
-              <div className="relative h-[280px] w-[280px] md:h-[360px] md:w-[360px]">
+            <div className="relative mx-auto animate-fade-up" style={{ animationDelay: "150ms" }}>
+              <div className="relative h-[280px] w-[280px] animate-float md:h-[360px] md:w-[360px]">
+
                 <div className="absolute inset-0 rounded-full bg-primary/20 blur-3xl" />
                 <svg
                   viewBox="0 0 200 200"
