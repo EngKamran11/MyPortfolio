@@ -1,133 +1,172 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Send, MessageCircle } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact | Kamran Ali" },
-      { name: "description", content: "Get in touch with Kamran Ali — Electrical Engineering student and developer based in Islamabad, Pakistan." },
+      {
+        name: "description",
+        content:
+          "Get in touch with Kamran Ali — Electrical Engineering student and developer based in Islamabad, Pakistan.",
+      },
+      { property: "og:title", content: "Contact | Kamran Ali" },
+      { property: "og:url", content: "/contact" },
     ],
+    links: [{ rel: "canonical", href: "/contact" }],
   }),
   component: ContactPage,
 });
 
 function ContactPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-      <div className="mb-12">
-        <p className="text-sm font-medium uppercase tracking-widest text-primary">Get in Touch</p>
-        <h1 className="mt-2 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-          Contact
-        </h1>
-        <p className="mt-4 max-w-2xl text-muted-foreground">
-          I'm always open to discussing new projects, creative ideas, or opportunities to be part
-          of your vision. Feel free to reach out!
-        </p>
+    <div className="relative overflow-hidden">
+      {/* Ambient gradient blobs */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-primary/20 blur-[120px]" />
+        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-primary/10 blur-[120px]" />
+        <div className="absolute inset-0 bg-grid opacity-30" />
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-2">
-        {/* Contact Info */}
-        <div className="space-y-6">
-          <ContactCard
-            icon={<Mail className="h-5 w-5" />}
-            title="Email"
-            value="kamisst046@gmail.com"
-            href="mailto:kamisst046@gmail.com"
-          />
-          <ContactCard
-            icon={<Phone className="h-5 w-5" />}
-            title="Phone"
-            value="+92 312 5683411"
-            href="tel:+923125683411"
-          />
-          <ContactCard
-            icon={<MapPin className="h-5 w-5" />}
-            title="Location"
-            value="Islamabad, Pakistan"
-          />
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+        <div className="mb-14 max-w-2xl animate-fade-up">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">
+            <MessageCircle className="h-3.5 w-3.5 text-primary" />
+            Let's talk
+          </div>
+          <h1 className="font-display text-4xl font-bold tracking-tight text-foreground md:text-6xl">
+            Have a project in <span className="text-gradient">mind?</span>
+          </h1>
+          <p className="mt-5 text-lg text-muted-foreground">
+            I'm always open to discussing new projects, creative ideas, or opportunities to be
+            part of your vision. Drop a message and I'll get back within 24 hours.
+          </p>
+        </div>
 
-          <div className="rounded-2xl border border-border bg-surface p-6">
-            <h3 className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
-              Social Links
-            </h3>
-            <div className="mt-4 flex gap-3">
-              <SocialButton
-                href="https://github.com/EngKamran11"
-                icon={<Github className="h-5 w-5" />}
-                label="GitHub"
-              />
-              <SocialButton
-                href="https://linkedin.com/in/kamran-ali"
-                icon={<Linkedin className="h-5 w-5" />}
-                label="LinkedIn"
-              />
+        <div className="grid gap-8 lg:grid-cols-5">
+          {/* Contact info column */}
+          <div className="space-y-4 lg:col-span-2">
+            <ContactCard
+              icon={<Mail className="h-5 w-5" />}
+              title="Email"
+              value="kamisst046@gmail.com"
+              href="mailto:kamisst046@gmail.com"
+            />
+            <ContactCard
+              icon={<Phone className="h-5 w-5" />}
+              title="Phone"
+              value="+92 312 5683411"
+              href="tel:+923125683411"
+            />
+            <ContactCard
+              icon={<MapPin className="h-5 w-5" />}
+              title="Location"
+              value="Islamabad, Pakistan"
+            />
+
+            <div className="gradient-border rounded-2xl p-6">
+              <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                Find me online
+              </h3>
+              <div className="mt-4 flex gap-3">
+                <SocialButton
+                  href="https://github.com/EngKamran11"
+                  icon={<Github className="h-5 w-5" />}
+                  label="GitHub"
+                />
+                <SocialButton
+                  href="https://linkedin.com/in/kamran-ali"
+                  icon={<Linkedin className="h-5 w-5" />}
+                  label="LinkedIn"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Form column */}
+          <div className="lg:col-span-3">
+            <div className="gradient-border relative overflow-hidden rounded-3xl p-8 md:p-10">
+              <div className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
+              <div className="relative">
+                <h2 className="font-display text-2xl font-bold text-foreground">
+                  Send a message
+                </h2>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Fill out the form and I'll reply as soon as possible.
+                </p>
+
+                <form
+                  className="mt-8 space-y-5"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    alert("Thank you for your message! I'll get back to you soon.");
+                  }}
+                >
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <Field id="name" label="Name" placeholder="Your name" />
+                    <Field id="email" label="Email" type="email" placeholder="you@email.com" />
+                  </div>
+                  <Field id="subject" label="Subject" placeholder="What's it about?" />
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={5}
+                      required
+                      className="block w-full resize-none rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted-foreground/60 focus:border-primary/60 focus:ring-4 focus:ring-primary/15"
+                      placeholder="Tell me about your project..."
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="shine group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:glow-primary"
+                  >
+                    Send Message
+                    <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-
-        {/* Contact Form Placeholder */}
-        <div className="rounded-2xl border border-border bg-surface p-6 md:p-8">
-          <h2 className="text-lg font-semibold text-foreground">Send a Message</h2>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Fill out the form below and I'll get back to you as soon as possible.
-          </p>
-
-          <form
-            className="mt-6 space-y-4"
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Thank you for your message! I'll get back to you soon.");
-            }}
-          >
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-foreground">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                className="mt-1 block w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary"
-                placeholder="Your name"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-foreground">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="mt-1 block w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary"
-                placeholder="your@email.com"
-              />
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-foreground">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                required
-                className="mt-1 block w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary"
-                placeholder="Your message..."
-              />
-            </div>
-            <button
-              type="submit"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:glow-primary"
-            >
-              <Send className="h-4 w-4" />
-              Send Message
-            </button>
-          </form>
-        </div>
       </div>
+    </div>
+  );
+}
+
+function Field({
+  id,
+  label,
+  type = "text",
+  placeholder,
+}: {
+  id: string;
+  label: string;
+  type?: string;
+  placeholder?: string;
+}) {
+  return (
+    <div>
+      <label
+        htmlFor={id}
+        className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground"
+      >
+        {label}
+      </label>
+      <input
+        type={type}
+        id={id}
+        name={id}
+        required
+        placeholder={placeholder}
+        className="block w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted-foreground/60 focus:border-primary/60 focus:ring-4 focus:ring-primary/15"
+      />
     </div>
   );
 }
@@ -144,15 +183,15 @@ function ContactCard({
   href?: string;
 }) {
   const content = (
-    <div className="flex items-center gap-4 rounded-2xl border border-border bg-surface p-5 transition-all hover:border-primary/30">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
+    <div className="hover-lift flex items-center gap-4 rounded-2xl border border-border bg-surface/60 p-5 backdrop-blur transition-colors hover:border-primary/40">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
         {icon}
       </div>
-      <div>
-        <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+      <div className="min-w-0">
+        <p className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground">
           {title}
         </p>
-        <p className="mt-0.5 text-sm font-medium text-foreground">{value}</p>
+        <p className="mt-1 truncate text-sm font-medium text-foreground">{value}</p>
       </div>
     </div>
   );
@@ -164,7 +203,6 @@ function ContactCard({
       </a>
     );
   }
-
   return content;
 }
 
@@ -183,7 +221,7 @@ function SocialButton({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-background text-muted-foreground transition-all hover:border-primary/30 hover:text-primary"
+      className="hover-lift flex h-12 w-12 items-center justify-center rounded-xl border border-border bg-background/50 text-muted-foreground transition-all hover:border-primary/50 hover:text-primary"
     >
       {icon}
     </a>
