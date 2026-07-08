@@ -24,7 +24,7 @@ const projects = [
     ],
   },
   {
-    icon: <Route className="h-6 w-6" />,
+    icon: <Map className="h-6 w-6" />,
     title: "Line Follower Robot (LFR)",
     category: "Robotics / Hardware",
     description:
