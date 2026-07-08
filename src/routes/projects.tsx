@@ -1,15 +1,42 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Github, Bot, Map, BookOpen } from "lucide-react";
+import {
+  Github,
+  Bot,
+  Map,
+  BookOpen,
+  Waves,
+  Sun,
+  Filter,
+  Smartphone,
+  Zap,
+} from "lucide-react";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
       { title: "Projects | Kamran Ali" },
-      { name: "description", content: "Kamran Ali's engineering projects — Sumo Robot, Line Follower Robot, and Library Management System." },
+      {
+        name: "description",
+        content:
+          "Engineering and software projects by Kamran Ali — robotics, MPPT solar tracking, DSP filters, Flutter apps and more.",
+      },
+      { property: "og:title", content: "Projects | Kamran Ali" },
+      {
+        property: "og:description",
+        content: "Robotics, power electronics, DSP and mobile apps.",
+      },
+      { property: "og:url", content: "/projects" },
     ],
+    links: [{ rel: "canonical", href: "/projects" }],
   }),
   component: ProjectsPage,
 });
+
+const githubLink = {
+  icon: <Github className="h-4 w-4" />,
+  label: "Source",
+  href: "https://github.com/EngKamran11",
+};
 
 const projects = [
   {
@@ -17,35 +44,76 @@ const projects = [
     title: "Sumo Robot",
     category: "Robotics / Hardware",
     description:
-      "Designed and built an autonomous sumo wrestling robot capable of detecting and pushing opponents out of a ring. Integrated sensors, motors, and control logic for competitive performance.",
-    tags: ["Robotics", "Sensors", "Motor Control", "Embedded Systems"],
-    links: [
-      { icon: <Github className="h-4 w-4" />, label: "Source Code", href: "https://github.com/EngKamran11" },
-    ],
+      "Competition-ready autonomous sumo robot with opponent detection sensors and combat control logic tuned for quick reactions in the ring.",
+    tags: ["Robotics", "Sensors", "Motor Control", "Embedded"],
+    links: [githubLink],
   },
   {
     icon: <Map className="h-6 w-6" />,
-    title: "Line Follower Robot (LFR)",
+    title: "Line Following Robot",
     category: "Robotics / Hardware",
     description:
-      "Built a line-following robot using infrared sensors and microcontroller programming. The robot autonomously tracks and follows a predefined path with high precision and speed.",
-    tags: ["Robotics", "IR Sensors", "Microcontroller", "PID Control"],
-    links: [
-      { icon: <Github className="h-4 w-4" />, label: "Source Code", href: "https://github.com/EngKamran11" },
-    ],
+      "Automated path-tracking robot using an IR sensor array and microcontroller-based control logic for smooth, high-speed line following.",
+    tags: ["IR Sensors", "Microcontroller", "PID", "Embedded"],
+    links: [githubLink],
   },
   {
     icon: <BookOpen className="h-6 w-6" />,
     title: "Library Management System",
-    category: "Software / Data Structures",
+    category: "Software / DSA",
     description:
-      "Developed a console-based library management system using advanced data structures. Features include book cataloging, member management, borrowing/returning operations, and search functionality.",
+      "Data management application built with core Data Structures & Algorithms concepts — cataloguing, borrowing, returning, and fast search.",
     tags: ["C++", "Data Structures", "Algorithms", "OOP"],
-    links: [
-      { icon: <Github className="h-4 w-4" />, label: "Source Code", href: "https://github.com/EngKamran11" },
-    ],
+    links: [githubLink],
+  },
+  {
+    icon: <Waves className="h-6 w-6" />,
+    title: "Noise Cancellation (DSP)",
+    category: "Signal Processing",
+    description:
+      "Implemented noise reduction techniques in MATLAB using adaptive filtering and DSP concepts, comparing performance across signal types.",
+    tags: ["MATLAB", "DSP", "Adaptive Filter"],
+    links: [githubLink],
+  },
+  {
+    icon: <Sun className="h-6 w-6" />,
+    title: "Solar Tracking — MPPT",
+    category: "Power Electronics",
+    description:
+      "Designed a solar panel tracking system using a Maximum Power Point Tracking (MPPT) algorithm to maximise energy harvest under varying conditions.",
+    tags: ["MPPT", "Solar", "Power Electronics", "Simulink"],
+    links: [githubLink],
+  },
+  {
+    icon: <Filter className="h-6 w-6" />,
+    title: "Digital FIR Low-Pass Filter",
+    category: "Signal Processing",
+    description:
+      "Designed and simulated a digital FIR low-pass filter in MATLAB and Simulink, analysing frequency response and window trade-offs.",
+    tags: ["MATLAB", "Simulink", "FIR", "DSP"],
+    links: [githubLink],
+  },
+  {
+    icon: <Smartphone className="h-6 w-6" />,
+    title: "Wallpaper App — Flutter + Pexels API",
+    category: "Mobile Development",
+    description:
+      "High-quality wallpaper app with category-based search, image caching, lazy loading, and a custom Material-inspired UI built in Flutter.",
+    tags: ["Flutter", "Dart", "REST API", "Caching"],
+    links: [githubLink],
+  },
+  {
+    icon: <Zap className="h-6 w-6" />,
+    title: "Zener Diode Voltage Regulator",
+    category: "Circuit Design",
+    description:
+      "Designed and simulated a Zener diode-based voltage regulator with side-by-side theoretical vs. simulated analysis of load and line regulation.",
+    tags: ["Circuits", "LTspice", "Regulator"],
+    links: [githubLink],
   },
 ];
+
+
 
 function ProjectsPage() {
   return (

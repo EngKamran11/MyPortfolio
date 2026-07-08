@@ -28,11 +28,11 @@ const skillCategories = [
   {
     title: "Programming",
     icon: <Code2 className="h-5 w-5" />,
-    color: "text-accent",
+    color: "text-primary",
     skills: [
-      { name: "Python", level: 90 },
-      { name: "C++", level: 75 },
-      { name: "MATLAB", level: 80 },
+      { name: "C / C++", level: 85 },
+      { name: "Python", level: 85 },
+      { name: "Dart (Flutter)", level: 75 },
     ],
   },
   {
@@ -41,17 +41,9 @@ const skillCategories = [
     color: "text-primary",
     skills: [
       { name: "Power Systems", level: 85 },
-      { name: "Signals and Systems", level: 80 },
-      { name: "Data Structures & Algorithms", level: 75 },
-    ],
-  },
-  {
-    title: "AI & Data",
-    icon: <Brain className="h-5 w-5" />,
-    color: "text-accent",
-    skills: [
-      { name: "Machine Learning", level: 80 },
-      { name: "Data Analysis", level: 70 },
+      { name: "Circuit Analysis", level: 85 },
+      { name: "Digital Logic", level: 80 },
+      { name: "Signal Processing", level: 80 },
     ],
   },
   {
@@ -59,19 +51,31 @@ const skillCategories = [
     icon: <Wrench className="h-5 w-5" />,
     color: "text-primary",
     skills: [
-      { name: "MATLAB", level: 85 },
+      { name: "MATLAB & Simulink", level: 85 },
+      { name: "LTspice", level: 75 },
       { name: "AutoCAD", level: 70 },
-      { name: "VS Code", level: 90 },
+      { name: "Flutter", level: 75 },
+    ],
+  },
+  {
+    title: "Concepts",
+    icon: <Brain className="h-5 w-5" />,
+    color: "text-primary",
+    skills: [
+      { name: "Data Structures & Algorithms", level: 80 },
+      { name: "DSP", level: 80 },
+      { name: "Power Systems Analysis", level: 80 },
     ],
   },
 ];
 
 const softSkills = [
-  { icon: <Users className="h-4 w-4" />, name: "Leadership" },
   { icon: <Handshake className="h-4 w-4" />, name: "Teamwork" },
-  { icon: <Lightbulb className="h-4 w-4" />, name: "Problem Solving" },
   { icon: <MessageSquare className="h-4 w-4" />, name: "Communication" },
+  { icon: <Users className="h-4 w-4" />, name: "Time Management" },
+  { icon: <Lightbulb className="h-4 w-4" />, name: "Quick Learner" },
 ];
+
 
 function SkillsPage() {
   return (
