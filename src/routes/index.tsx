@@ -54,7 +54,8 @@ function HomePage() {
 
         <div className="relative mx-auto max-w-6xl px-6 py-20 md:py-28">
           <div className="grid items-center gap-12 md:grid-cols-2">
-            <div>
+            <div className="animate-fade-up">
+
               <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-primary">
                 Electrical Engineer · Power Systems
               </p>
@@ -90,8 +91,9 @@ function HomePage() {
             </div>
 
             {/* Heart-framed monogram avatar */}
-            <div className="relative mx-auto">
-              <div className="relative h-[280px] w-[280px] md:h-[360px] md:w-[360px]">
+            <div className="relative mx-auto animate-fade-up" style={{ animationDelay: "150ms" }}>
+              <div className="relative h-[280px] w-[280px] animate-float md:h-[360px] md:w-[360px]">
+
                 <div className="absolute inset-0 rounded-full bg-primary/20 blur-3xl" />
                 <svg
                   viewBox="0 0 200 200"

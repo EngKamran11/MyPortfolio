@@ -130,19 +130,21 @@ function ProjectsPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
+        {projects.map((project, i) => (
           <div
             key={project.title}
-            className="group flex flex-col rounded-2xl border border-border bg-surface p-6 transition-all hover:border-primary/30"
+            className="hover-lift group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-surface p-6 animate-fade-up"
+            style={{ animationDelay: `${i * 60}ms` }}
           >
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-primary transition-colors group-hover:bg-primary/10">
+            <div className="pointer-events-none absolute -right-16 -top-16 h-32 w-32 rounded-full bg-primary/10 blur-2xl opacity-0 transition-opacity group-hover:opacity-100" />
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110">
               {project.icon}
             </div>
 
-            <span className="text-xs font-medium uppercase tracking-wider text-accent">
+            <span className="text-xs font-semibold uppercase tracking-[0.15em] text-primary">
               {project.category}
             </span>
-            <h2 className="mt-2 text-lg font-semibold text-foreground">{project.title}</h2>
+            <h2 className="mt-2 font-display text-lg font-bold text-foreground">{project.title}</h2>
             <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
               {project.description}
             </p>
@@ -151,21 +153,21 @@ function ProjectsPage() {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-md bg-hero px-2 py-1 text-xs font-medium text-muted-foreground"
+                  className="rounded-md border border-border/60 bg-hero px-2 py-1 text-xs font-medium text-muted-foreground"
                 >
                   {tag}
                 </span>
               ))}
             </div>
 
-            <div className="mt-4 flex gap-3">
+            <div className="mt-5 flex gap-3 border-t border-border/60 pt-4">
               {project.links.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground transition-colors hover:text-primary"
+                  className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:text-primary"
                 >
                   {link.icon}
                   {link.label}
@@ -175,6 +177,7 @@ function ProjectsPage() {
           </div>
         ))}
       </div>
+
     </div>
   );
 }
