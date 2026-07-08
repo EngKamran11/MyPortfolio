@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Kamran Ali — Electrical Engineer & Developer" },
       {
         property: "og:description",
-        content: "Power systems, robotics, DSP and Flutter — projects, skills and experience.",
+        content: "Portfolio of Kamran Ali — final-year BS Electrical Engineering student specializing in power systems, robotics, DSP and Flutter development.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
