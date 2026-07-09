@@ -101,21 +101,25 @@ function HomePage() {
                   aria-hidden
                 >
                   <defs>
-                    <linearGradient id="heartGrad" x1="0" y1="0" x2="1" y2="1">
+                    <linearGradient id="circleGrad" x1="0" y1="0" x2="1" y2="1">
                       <stop offset="0%" stopColor="oklch(0.68 0.24 25)" />
                       <stop offset="100%" stopColor="oklch(0.52 0.2 20)" />
                     </linearGradient>
-                    <pattern id="heartGrid" width="12" height="12" patternUnits="userSpaceOnUse">
+                    <pattern id="circleGrid" width="12" height="12" patternUnits="userSpaceOnUse">
                       <path d="M12 0 L0 0 0 12" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="0.5" />
                     </pattern>
                   </defs>
-                  <path
-                    d="M100 180 C 100 180, 20 130, 20 70 C 20 35, 50 15, 75 30 C 88 38, 100 55, 100 55 C 100 55, 112 38, 125 30 C 150 15, 180 35, 180 70 C 180 130, 100 180, 100 180 Z"
-                    fill="url(#heartGrad)"
+                  <circle
+                    cx="100"
+                    cy="100"
+                    r="82"
+                    fill="url(#circleGrad)"
                   />
-                  <path
-                    d="M100 180 C 100 180, 20 130, 20 70 C 20 35, 50 15, 75 30 C 88 38, 100 55, 100 55 C 100 55, 112 38, 125 30 C 150 15, 180 35, 180 70 C 180 130, 100 180, 100 180 Z"
-                    fill="url(#heartGrid)"
+                  <circle
+                    cx="100"
+                    cy="100"
+                    r="82"
+                    fill="url(#circleGrid)"
                   />
                   <text
                     x="100"
