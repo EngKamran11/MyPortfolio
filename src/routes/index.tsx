@@ -93,47 +93,14 @@ function HomePage() {
             {/* Heart-framed monogram avatar */}
             <div className="relative mx-auto animate-fade-up" style={{ animationDelay: "150ms" }}>
               <div className="relative h-[280px] w-[280px] animate-float md:h-[360px] md:w-[360px]">
-
                 <div className="absolute inset-0 rounded-full bg-primary/20 blur-3xl" />
-                <svg
-                  viewBox="0 0 200 200"
+                <img
+                  src="/images/ka-circle-badge.png"
+                  alt="KA monogram badge"
+                  width={360}
+                  height={360}
                   className="relative h-full w-full drop-shadow-[0_25px_60px_rgba(220,50,50,0.45)]"
-                  aria-hidden
-                >
-                  <defs>
-                    <linearGradient id="circleGrad" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="oklch(0.68 0.24 25)" />
-                      <stop offset="100%" stopColor="oklch(0.52 0.2 20)" />
-                    </linearGradient>
-                    <pattern id="circleGrid" width="12" height="12" patternUnits="userSpaceOnUse">
-                      <path d="M12 0 L0 0 0 12" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="0.5" />
-                    </pattern>
-                  </defs>
-                  <circle
-                    cx="100"
-                    cy="100"
-                    r="82"
-                    fill="url(#circleGrad)"
-                  />
-                  <circle
-                    cx="100"
-                    cy="100"
-                    r="82"
-                    fill="url(#circleGrid)"
-                  />
-                  <text
-                    x="100"
-                    y="115"
-                    textAnchor="middle"
-                    fontFamily="Space Grotesk, sans-serif"
-                    fontWeight="700"
-                    fontSize="60"
-                    fill="white"
-                    letterSpacing="-2"
-                  >
-                    KA
-                  </text>
-                </svg>
+                />
                 <div className="absolute -bottom-4 -right-2 flex items-center gap-2 rounded-full border border-border bg-surface/90 px-4 py-2 shadow-xl backdrop-blur">
                   <Sparkles className="h-4 w-4 text-primary" />
                   <span className="text-xs font-semibold text-foreground">Open to work</span>
