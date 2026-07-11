@@ -93,20 +93,24 @@ function HomePage() {
 
             {/* Portrait avatar */}
             <div className="relative mx-auto animate-fade-up" style={{ animationDelay: "150ms" }}>
-              <div className="relative h-[280px] w-[280px] animate-float md:h-[360px] md:w-[360px]">
-                <div className="absolute inset-0 rounded-full bg-primary/20 blur-3xl" />
-                <img
-                  src={pfpAsset.url}
-                  alt="Kamran Ali portrait"
-                  width={360}
-                  height={360}
-                  className="relative h-full w-full rounded-full object-cover drop-shadow-[0_25px_60px_rgba(59,130,246,0.35)] ring-4 ring-border/60"
-                />
-                <div className="absolute -bottom-4 -right-2 flex items-center gap-2 rounded-full border border-border bg-surface/90 px-4 py-2 shadow-xl backdrop-blur">
+              <div className="relative h-[300px] w-[300px] animate-float md:h-[380px] md:w-[380px]">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/30 to-primary/5 blur-3xl" />
+                <div className="relative h-full w-full rounded-full bg-gradient-to-br from-primary/30 via-primary/60 to-primary/20 p-1.5 shadow-2xl shadow-primary/25">
+                  <div className="relative h-full w-full overflow-hidden rounded-full bg-surface">
+                    <img
+                      src={pfpAsset.url}
+                      alt="Kamran Ali portrait"
+                      width={380}
+                      height={380}
+                      className="h-full w-full object-cover object-top"
+                    />
+                  </div>
+                </div>
+                <div className="absolute -bottom-2 -right-2 flex items-center gap-2 rounded-full border border-border bg-surface/95 px-4 py-2 shadow-xl backdrop-blur">
                   <Sparkles className="h-4 w-4 text-primary" />
                   <span className="text-xs font-semibold text-foreground">Open to work</span>
                 </div>
-                <div className="absolute -left-2 top-8 flex items-center gap-2 rounded-full border border-border bg-surface/90 px-4 py-2 shadow-xl backdrop-blur">
+                <div className="absolute -left-2 top-10 flex items-center gap-2 rounded-full border border-border bg-surface/95 px-4 py-2 shadow-xl backdrop-blur">
                   <Zap className="h-4 w-4 text-primary" />
                   <span className="text-xs font-semibold text-foreground">Power Engineer</span>
                 </div>
