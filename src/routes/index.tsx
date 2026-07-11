@@ -91,7 +91,7 @@ function HomePage() {
               </div>
             </div>
 
-            {/* Heart-framed monogram avatar */}
+            {/* Portrait avatar */}
             <div className="relative mx-auto animate-fade-up" style={{ animationDelay: "150ms" }}>
               <div className="relative h-[280px] w-[280px] animate-float md:h-[360px] md:w-[360px]">
                 <div className="absolute inset-0 rounded-full bg-primary/20 blur-3xl" />
