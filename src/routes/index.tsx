@@ -96,7 +96,7 @@ function HomePage() {
               <div className="relative h-[300px] w-[300px] animate-float md:h-[380px] md:w-[380px]">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/30 to-primary/5 blur-3xl" />
                 <div className="relative h-full w-full rounded-full bg-gradient-to-br from-primary/30 via-primary/60 to-primary/20 p-1.5 shadow-2xl shadow-primary/25">
-                  <div className="relative h-full w-full overflow-hidden rounded-full bg-surface">
+                  <div className="relative h-full w-full overflow-hidden rounded-full bg-white">
                     <img
                       src={pfpAsset.url}
                       alt="Kamran Ali portrait"
