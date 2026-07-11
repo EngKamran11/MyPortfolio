@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import pfpAsset from "@/assets/pfp.JPG.asset.json";
 import {
   Github,
   Linkedin,
@@ -90,16 +91,16 @@ function HomePage() {
               </div>
             </div>
 
-            {/* Heart-framed monogram avatar */}
+            {/* Portrait avatar */}
             <div className="relative mx-auto animate-fade-up" style={{ animationDelay: "150ms" }}>
               <div className="relative h-[280px] w-[280px] animate-float md:h-[360px] md:w-[360px]">
                 <div className="absolute inset-0 rounded-full bg-primary/20 blur-3xl" />
                 <img
-                  src="/images/ka-circle-badge.png"
-                  alt="KA monogram badge"
+                  src={pfpAsset.url}
+                  alt="Kamran Ali portrait"
                   width={360}
                   height={360}
-                  className="relative h-full w-full drop-shadow-[0_25px_60px_rgba(220,50,50,0.45)]"
+                  className="relative h-full w-full rounded-full object-cover drop-shadow-[0_25px_60px_rgba(59,130,246,0.35)] ring-4 ring-border/60"
                 />
                 <div className="absolute -bottom-4 -right-2 flex items-center gap-2 rounded-full border border-border bg-surface/90 px-4 py-2 shadow-xl backdrop-blur">
                   <Sparkles className="h-4 w-4 text-primary" />
