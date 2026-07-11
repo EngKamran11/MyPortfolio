@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import pfpAsset from "@/assets/pfp.JPG.asset.json";
 import {
   Github,
   Linkedin,
