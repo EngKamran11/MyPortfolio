@@ -130,7 +130,7 @@ function HomePage() {
               icon={<Linkedin className="h-5 w-5" />}
               label="LinkedIn"
               sub="Kamran Ali"
-              href="https://linkedin.com/in/kamran-ali"
+              href="https://www.linkedin.com/in/kamran-ali-2a24a6357"
             />
             <SocialCard
               icon={<Mail className="h-5 w-5" />}

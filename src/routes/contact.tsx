@@ -75,7 +75,7 @@ function ContactPage() {
                   label="GitHub"
                 />
                 <SocialButton
-                  href="https://linkedin.com/in/kamran-ali"
+                  href="https://www.linkedin.com/in/kamran-ali-2a24a6357"
                   icon={<Linkedin className="h-5 w-5" />}
                   label="LinkedIn"
                 />
