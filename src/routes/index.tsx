@@ -55,7 +55,7 @@ function HomePage() {
 
         <div className="relative mx-auto max-w-6xl px-6 py-20 md:py-28">
           <div className="grid items-center gap-12 md:grid-cols-2">
-            <div className="animate-fade-up">
+            <div className="order-2 animate-fade-up md:order-1">
 
               <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-primary">
                 Electrical Engineer · Power Systems
