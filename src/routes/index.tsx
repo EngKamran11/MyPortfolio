@@ -92,7 +92,7 @@ function HomePage() {
             </div>
 
             {/* Portrait avatar */}
-            <div className="relative mx-auto animate-fade-up" style={{ animationDelay: "150ms" }}>
+            <div className="relative order-1 mx-auto animate-fade-up md:order-2" style={{ animationDelay: "150ms" }}>
               <div className="relative h-[300px] w-[300px] animate-float md:h-[380px] md:w-[380px]">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/30 to-primary/5 blur-3xl" />
                 <div className="relative h-full w-full rounded-full bg-gradient-to-br from-primary/30 via-primary/60 to-primary/20 p-1.5 shadow-2xl shadow-primary/25">
