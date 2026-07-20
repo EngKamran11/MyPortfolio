@@ -9,6 +9,7 @@ import {
   Filter,
   Smartphone,
   Zap,
+  ExternalLink,
 } from "lucide-react";
 
 export const Route = createFileRoute("/projects")({
@@ -39,6 +40,21 @@ const githubLink = {
 };
 
 const projects = [
+  {
+    icon: <Bot className="h-6 w-6" />,
+    title: "EngineerGPT",
+    category: "AI / Full-Stack Development",
+    description:
+      "AI-powered study workspace for engineering students, featuring engineering-focused chat, PDF analysis, smart note generation, and document-based quizzes.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "AI"],
+    links: [
+      {
+        icon: <ExternalLink className="h-4 w-4" />,
+        label: "Live Demo",
+        href: "https://engineer-gpt-l5nm.vercel.app/",
+      },
+    ],
+  },
   {
     icon: <Bot className="h-6 w-6" />,
     title: "Sumo Robot",

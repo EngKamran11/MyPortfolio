@@ -50,7 +50,7 @@ function ContactPage() {
               icon={<Mail className="h-5 w-5" />}
               title="Email"
               value="kamisst046@gmail.com"
-              href="mailto:kamisst046@gmail.com"
+              href="mailto:kamisst046@gmail.com?subject=Portfolio%20Enquiry"
             />
             <ContactCard
               icon={<Phone className="h-5 w-5" />}
@@ -97,9 +97,21 @@ function ContactPage() {
 
                 <form
                   className="mt-8 space-y-5"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    alert("Thank you for your message! I'll get back to you soon.");
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    const form = new FormData(event.currentTarget);
+                    const name = String(form.get("name") ?? "");
+                    const email = String(form.get("email") ?? "");
+                    const subject = String(form.get("subject") ?? "Portfolio enquiry");
+                    const message = String(form.get("message") ?? "");
+                    const body = [
+                      `Name: ${name}`,
+                      `Email: ${email}`,
+                      "",
+                      message,
+                    ].join("\n");
+
+                    window.location.href = `mailto:kamisst046@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                   }}
                 >
                   <div className="grid gap-5 sm:grid-cols-2">

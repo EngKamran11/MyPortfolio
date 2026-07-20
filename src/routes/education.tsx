@@ -43,12 +43,21 @@ function EducationPage() {
           icon={<School className="h-6 w-6" />}
           institution="Sargodhian Spirit Trust Public School"
           location="Rashidabad, Sindh"
-          degree="Intermediate / High School"
+          degree="O Levels & A Levels"
           period="Completed"
           details={[
             "Built strong analytical and problem-solving foundations",
             "Developed interest in science and technology",
           ]}
+        />
+
+        <EducationCard
+          icon={<School className="h-6 w-6" />}
+          institution="Khubaib College Skardu"
+          location="Skardu"
+          degree="Early Education"
+          period="Completed"
+          details={["Completed my early education and built a strong academic foundation"]}
         />
       </div>
     </div>
