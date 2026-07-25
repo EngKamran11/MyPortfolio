@@ -80,7 +80,18 @@ const projects = [
     description:
       "Data management application built with core Data Structures & Algorithms concepts — cataloguing, borrowing, returning, and fast search.",
     tags: ["C++", "Data Structures", "Algorithms", "OOP"],
-    links: [githubLink],
+    links: [
+      {
+        icon: <Github className="h-4 w-4" />,
+        label: "Source",
+        href: "https://github.com/EngKamran11/Library-Management-System",
+      },
+      {
+        icon: <ExternalLink className="h-4 w-4" />,
+        label: "Live Demo",
+        href: "https://folio-library-management.vercel.app",
+      },
+    ],
   },
   {
     icon: <Waves className="h-6 w-6" />,
