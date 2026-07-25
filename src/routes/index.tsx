@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import pfpAsset from "@/assets/pfp-transparent.png.asset.json";
 import {
   Github,
   Linkedin,
@@ -98,11 +97,12 @@ function HomePage() {
                 <div className="relative h-full w-full rounded-full bg-gradient-to-br from-primary/30 via-primary/60 to-primary/20 p-1.5 shadow-2xl shadow-primary/25">
                   <div className="relative h-full w-full overflow-hidden rounded-full bg-white">
                     <img
-                      src={pfpAsset.url}
+                      src="/images/pfp.JPG"
                       alt="Kamran Ali portrait"
                       width={380}
                       height={380}
-                      className="h-full w-full object-cover object-top"
+                      loading="lazy"
+                      className="h-full w-full object-cover object-center"
                     />
                   </div>
                 </div>

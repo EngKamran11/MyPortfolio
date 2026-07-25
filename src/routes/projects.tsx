@@ -56,6 +56,22 @@ const projects = [
     ],
   },
   {
+    icon: <Smartphone className="h-6 w-6" />,
+    title: "Wallpaper App — Flutter + Pexels API",
+    category: "Mobile Development",
+    description:
+      "High-quality wallpaper app with category-based search, image caching, lazy loading, and a custom Material-inspired UI built in Flutter.",
+    tags: ["Flutter", "Dart", "REST API", "Caching"],
+    links: [
+      {
+        icon: <ExternalLink className="h-4 w-4" />,
+        label: "Live Demo",
+        href: "https://wallpaper-app-three-xi.vercel.app",
+      },
+      githubLink,
+    ],
+  },
+  {
     icon: <Bot className="h-6 w-6" />,
     title: "Sumo Robot",
     category: "Robotics / Hardware",
@@ -80,7 +96,14 @@ const projects = [
     description:
       "Data management application built with core Data Structures & Algorithms concepts — cataloguing, borrowing, returning, and fast search.",
     tags: ["C++", "Data Structures", "Algorithms", "OOP"],
-    links: [githubLink],
+    links: [
+      {
+        icon: <ExternalLink className="h-4 w-4" />,
+        label: "Live Demo",
+        href: "https://folio-library-management.vercel.app",
+      },
+      githubLink,
+    ],
   },
   {
     icon: <Waves className="h-6 w-6" />,
@@ -107,15 +130,6 @@ const projects = [
     description:
       "Designed and simulated a digital FIR low-pass filter in MATLAB and Simulink, analysing frequency response and window trade-offs.",
     tags: ["MATLAB", "Simulink", "FIR", "DSP"],
-    links: [githubLink],
-  },
-  {
-    icon: <Smartphone className="h-6 w-6" />,
-    title: "Wallpaper App — Flutter + Pexels API",
-    category: "Mobile Development",
-    description:
-      "High-quality wallpaper app with category-based search, image caching, lazy loading, and a custom Material-inspired UI built in Flutter.",
-    tags: ["Flutter", "Dart", "REST API", "Caching"],
     links: [githubLink],
   },
   {
