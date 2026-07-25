@@ -80,18 +80,7 @@ const projects = [
     description:
       "Data management application built with core Data Structures & Algorithms concepts — cataloguing, borrowing, returning, and fast search.",
     tags: ["C++", "Data Structures", "Algorithms", "OOP"],
-    links: [
-      {
-        icon: <Github className="h-4 w-4" />,
-        label: "Source",
-        href: "https://github.com/EngKamran11/Library-Management-System",
-      },
-      {
-        icon: <ExternalLink className="h-4 w-4" />,
-        label: "Live Demo",
-        href: "https://folio-library-management.vercel.app",
-      },
-    ],
+    links: [githubLink],
   },
   {
     icon: <Waves className="h-6 w-6" />,
@@ -127,14 +116,7 @@ const projects = [
     description:
       "High-quality wallpaper app with category-based search, image caching, lazy loading, and a custom Material-inspired UI built in Flutter.",
     tags: ["Flutter", "Dart", "REST API", "Caching"],
-    links: [
-      {
-        icon: <ExternalLink className="h-4 w-4" />,
-        label: "Live Demo",
-        href: "https://wallpaper-app-three-xi.vercel.app",
-      },
-      githubLink,
-    ],
+    links: [githubLink],
   },
   {
     icon: <Zap className="h-6 w-6" />,
