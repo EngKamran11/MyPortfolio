@@ -20,7 +20,7 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden bg-[#e6dede] px-3 pb-6 md:px-10 md:pb-10">
       {/* Ambient gradient blobs */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-primary/20 blur-[120px]" />
@@ -28,9 +28,9 @@ function ContactPage() {
         <div className="absolute inset-0 bg-grid opacity-30" />
       </div>
 
-      <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <div className="portfolio-page mx-auto max-w-5xl px-7 py-14 sm:px-10 md:px-16 md:py-20">
         <div className="mb-14 max-w-2xl animate-fade-up">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">
+          <div className="mb-4 inline-flex items-center gap-2 border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-medium text-muted-foreground">
             <MessageCircle className="h-3.5 w-3.5 text-primary" />
             Let's talk
           </div>
@@ -38,8 +38,8 @@ function ContactPage() {
             Have a project in <span className="text-gradient">mind?</span>
           </h1>
           <p className="mt-5 text-lg text-muted-foreground">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be
-            part of your vision. Drop a message and I'll get back within 24 hours.
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part
+            of your vision. Drop a message and I'll get back within 24 hours.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ function ContactPage() {
               value="Islamabad, Pakistan"
             />
 
-            <div className="gradient-border rounded-2xl p-6">
+            <div className="gradient-border p-6">
               <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                 Find me online
               </h3>
@@ -85,12 +85,10 @@ function ContactPage() {
 
           {/* Form column */}
           <div className="lg:col-span-3">
-            <div className="gradient-border relative overflow-hidden rounded-3xl p-8 md:p-10">
+            <div className="gradient-border relative overflow-hidden p-8 md:p-10">
               <div className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
               <div className="relative">
-                <h2 className="font-display text-2xl font-bold text-foreground">
-                  Send a message
-                </h2>
+                <h2 className="font-display text-2xl font-bold text-foreground">Send a message</h2>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Fill out the form and I'll reply as soon as possible.
                 </p>
@@ -104,14 +102,15 @@ function ContactPage() {
                     const email = String(form.get("email") ?? "");
                     const subject = String(form.get("subject") ?? "Portfolio enquiry");
                     const message = String(form.get("message") ?? "");
-                    const body = [
-                      `Name: ${name}`,
-                      `Email: ${email}`,
-                      "",
-                      message,
-                    ].join("\n");
+                    const body = [`Name: ${name}`, `Email: ${email}`, "", message].join("\n");
 
-                    window.location.href = `mailto:kamisst046@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    const gmailUrl = new URL("https://mail.google.com/mail/");
+                    gmailUrl.searchParams.set("view", "cm");
+                    gmailUrl.searchParams.set("fs", "1");
+                    gmailUrl.searchParams.set("to", "kamisst046@gmail.com");
+                    gmailUrl.searchParams.set("su", subject);
+                    gmailUrl.searchParams.set("body", body);
+                    window.open(gmailUrl.toString(), "_blank", "noopener,noreferrer");
                   }}
                 >
                   <div className="grid gap-5 sm:grid-cols-2">
@@ -131,13 +130,13 @@ function ContactPage() {
                       name="message"
                       rows={5}
                       required
-                      className="block w-full resize-none rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted-foreground/60 focus:border-primary/60 focus:ring-4 focus:ring-primary/15"
+                      className="block w-full resize-none border border-white/10 bg-[#0d1b26] px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted-foreground/60 focus:border-primary/60 focus:ring-4 focus:ring-primary/15"
                       placeholder="Tell me about your project..."
                     />
                   </div>
                   <button
                     type="submit"
-                    className="shine group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:glow-primary"
+                    className="shine group inline-flex w-full items-center justify-center gap-2 bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:glow-primary"
                   >
                     Send Message
                     <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -177,7 +176,7 @@ function Field({
         name={id}
         required
         placeholder={placeholder}
-        className="block w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted-foreground/60 focus:border-primary/60 focus:ring-4 focus:ring-primary/15"
+        className="block w-full border border-white/10 bg-[#0d1b26] px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted-foreground/60 focus:border-primary/60 focus:ring-4 focus:ring-primary/15"
       />
     </div>
   );
@@ -195,8 +194,8 @@ function ContactCard({
   href?: string;
 }) {
   const content = (
-    <div className="hover-lift flex items-center gap-4 rounded-2xl border border-border bg-surface/60 p-5 backdrop-blur transition-colors hover:border-primary/40">
-      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+    <div className="hover-lift flex items-center gap-4 border border-white/5 bg-[#10212d] p-5 transition-colors hover:border-primary/40">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-primary/25 bg-primary/5 text-primary">
         {icon}
       </div>
       <div className="min-w-0">
@@ -233,7 +232,7 @@ function SocialButton({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="hover-lift flex h-12 w-12 items-center justify-center rounded-xl border border-border bg-background/50 text-muted-foreground transition-all hover:border-primary/50 hover:text-primary"
+      className="hover-lift flex h-12 w-12 items-center justify-center border border-white/10 bg-[#0d1b26] text-muted-foreground transition-all hover:border-primary/50 hover:text-primary"
     >
       {icon}
     </a>

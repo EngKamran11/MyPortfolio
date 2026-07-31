@@ -1,6 +1,6 @@
 import { Link, useRouter } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -17,17 +17,18 @@ export function Navigation() {
   const router = useRouter();
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-border/40 bg-background/70 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link to="/" className="group flex items-center gap-2 text-lg font-bold tracking-tight text-foreground">
-          <span className="relative flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-lg shadow-primary/30 transition-transform group-hover:scale-110">
-            <Zap className="h-4 w-4" />
-            <span className="absolute inset-0 rounded-lg bg-primary/40 animate-pulse-ring" />
+    <nav className="sticky top-0 z-50 bg-[#e6dede] px-3 pt-3 backdrop-blur-xl md:px-10 md:pt-5">
+      <div className="mx-auto flex max-w-5xl items-center justify-between border-b border-white/5 bg-[#0d1b26]/95 px-7 py-4 sm:px-10">
+        <Link
+          to="/"
+          className="group flex items-center text-lg font-bold tracking-tight text-foreground"
+        >
+          <span className="text-xs font-semibold tracking-wide text-white transition-colors group-hover:text-primary">
+            Kamran Ali
           </span>
-          <span>Kamran<span className="text-primary">.</span></span>
         </Link>
 
-        <div className="hidden items-center gap-1 rounded-full border border-border/60 bg-surface/60 p-1 backdrop-blur md:flex">
+        <div className="hidden items-center gap-7 md:flex">
           {navLinks.map((link) => {
             const isActive = router.state.location.pathname === link.to;
             return (
@@ -35,14 +36,14 @@ export function Navigation() {
                 key={link.to}
                 to={link.to}
                 className={cn(
-                  "relative rounded-full px-4 py-1.5 text-sm font-medium transition-colors",
+                  "relative py-2 text-[11px] font-medium uppercase tracking-[0.14em] transition-colors",
                   isActive
                     ? "text-primary-foreground"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-muted-foreground hover:text-foreground",
                 )}
               >
                 {isActive && (
-                  <span className="absolute inset-0 -z-0 rounded-full bg-primary shadow-lg shadow-primary/40" />
+                  <span className="absolute -bottom-0.5 left-0 h-px w-full bg-primary" />
                 )}
                 <span className="relative z-10">{link.label}</span>
               </Link>
@@ -51,7 +52,7 @@ export function Navigation() {
         </div>
 
         <button
-          className="rounded-lg border border-border p-2 md:hidden"
+          className="border border-white/10 p-2 md:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -73,7 +74,7 @@ export function Navigation() {
                     "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
                     isActive
                       ? "bg-primary text-primary-foreground"
-                      : "text-muted-foreground hover:bg-surface hover:text-foreground"
+                      : "text-muted-foreground hover:bg-surface hover:text-foreground",
                   )}
                 >
                   {link.label}
@@ -86,4 +87,3 @@ export function Navigation() {
     </nav>
   );
 }
-

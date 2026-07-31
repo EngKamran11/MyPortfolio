@@ -56,6 +56,22 @@ const projects = [
     ],
   },
   {
+    icon: <Smartphone className="h-6 w-6" />,
+    title: "Wallpaper App — Flutter + Pexels API",
+    category: "Mobile Development",
+    description:
+      "High-quality wallpaper app with category-based search, image caching, lazy loading, and a custom Material-inspired UI built in Flutter.",
+    tags: ["Flutter", "Dart", "REST API", "Caching"],
+    links: [
+      {
+        icon: <ExternalLink className="h-4 w-4" />,
+        label: "Live Demo",
+        href: "https://wallpaper-app-three-xi.vercel.app",
+      },
+      githubLink,
+    ],
+  },
+  {
     icon: <Bot className="h-6 w-6" />,
     title: "Sumo Robot",
     category: "Robotics / Hardware",
@@ -110,15 +126,6 @@ const projects = [
     links: [githubLink],
   },
   {
-    icon: <Smartphone className="h-6 w-6" />,
-    title: "Wallpaper App — Flutter + Pexels API",
-    category: "Mobile Development",
-    description:
-      "High-quality wallpaper app with category-based search, image caching, lazy loading, and a custom Material-inspired UI built in Flutter.",
-    tags: ["Flutter", "Dart", "REST API", "Caching"],
-    links: [githubLink],
-  },
-  {
     icon: <Zap className="h-6 w-6" />,
     title: "Zener Diode Voltage Regulator",
     category: "Circuit Design",
@@ -129,11 +136,9 @@ const projects = [
   },
 ];
 
-
-
 function ProjectsPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+    <div className="portfolio-page mx-auto max-w-5xl px-7 py-14 sm:px-10 md:px-16 md:py-20">
       <div className="mb-12">
         <p className="text-sm font-medium uppercase tracking-widest text-primary">Portfolio</p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
@@ -149,11 +154,11 @@ function ProjectsPage() {
         {projects.map((project, i) => (
           <div
             key={project.title}
-            className="hover-lift group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-surface p-6 animate-fade-up"
+            className="portfolio-card hover-lift group relative flex flex-col overflow-hidden border border-white/5 bg-[#10212d] p-6 animate-fade-up"
             style={{ animationDelay: `${i * 60}ms` }}
           >
             <div className="pointer-events-none absolute -right-16 -top-16 h-32 w-32 rounded-full bg-primary/10 blur-2xl opacity-0 transition-opacity group-hover:opacity-100" />
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center border border-primary/25 bg-primary/5 text-primary transition-all group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110">
               {project.icon}
             </div>
 
@@ -193,7 +198,6 @@ function ProjectsPage() {
           </div>
         ))}
       </div>
-
     </div>
   );
 }
