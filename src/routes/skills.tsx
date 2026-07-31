@@ -18,7 +18,11 @@ export const Route = createFileRoute("/skills")({
   head: () => ({
     meta: [
       { title: "Skills | Kamran Ali" },
-      { name: "description", content: "Kamran Ali's technical and soft skills — programming, engineering, AI/ML, and tools." },
+      {
+        name: "description",
+        content:
+          "Kamran Ali's technical and soft skills — programming, engineering, AI/ML, and tools.",
+      },
     ],
   }),
   component: SkillsPage,
@@ -76,10 +80,9 @@ const softSkills = [
   { icon: <Lightbulb className="h-4 w-4" />, name: "Quick Learner" },
 ];
 
-
 function SkillsPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+    <div className="portfolio-page mx-auto max-w-5xl px-7 py-14 sm:px-10 md:px-16 md:py-20">
       <div className="mb-12">
         <p className="text-sm font-medium uppercase tracking-widest text-primary">Expertise</p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
@@ -95,10 +98,12 @@ function SkillsPage() {
         {skillCategories.map((category) => (
           <div
             key={category.title}
-            className="rounded-2xl border border-border bg-surface p-6 transition-all hover:border-primary/30"
+            className="portfolio-card border border-white/5 bg-[#10212d] p-6 transition-all hover:border-primary/40"
           >
             <div className="mb-6 flex items-center gap-3">
-              <div className={`flex h-10 w-10 items-center justify-center rounded-lg bg-secondary ${category.color}`}>
+              <div
+                className={`flex h-10 w-10 items-center justify-center rounded-lg bg-secondary ${category.color}`}
+              >
                 {category.icon}
               </div>
               <h2 className="text-lg font-semibold text-foreground">{category.title}</h2>
@@ -130,7 +135,7 @@ function SkillsPage() {
           {softSkills.map((skill) => (
             <div
               key={skill.name}
-              className="flex items-center gap-3 rounded-xl border border-border bg-surface p-4 transition-all hover:border-primary/30"
+              className="flex items-center gap-3 border border-white/5 bg-[#10212d] p-4 transition-all hover:border-primary/40"
             >
               <div className="text-primary">{skill.icon}</div>
               <span className="text-sm font-medium text-foreground">{skill.name}</span>

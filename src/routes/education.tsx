@@ -5,7 +5,11 @@ export const Route = createFileRoute("/education")({
   head: () => ({
     meta: [
       { title: "Education | Kamran Ali" },
-      { name: "description", content: "Kamran Ali's educational background — BS Electrical Engineering at COMSATS University Islamabad." },
+      {
+        name: "description",
+        content:
+          "Kamran Ali's educational background — BS Electrical Engineering at COMSATS University Islamabad.",
+      },
     ],
   }),
   component: EducationPage,
@@ -13,15 +17,15 @@ export const Route = createFileRoute("/education")({
 
 function EducationPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+    <div className="portfolio-page mx-auto max-w-5xl px-7 py-14 sm:px-10 md:px-16 md:py-20">
       <div className="mb-12">
         <p className="text-sm font-medium uppercase tracking-widest text-primary">Background</p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
           Education
         </h1>
         <p className="mt-4 max-w-2xl text-muted-foreground">
-          My academic journey has provided me with a strong foundation in electrical engineering principles,
-          power systems, and software development.
+          My academic journey has provided me with a strong foundation in electrical engineering
+          principles, power systems, and software development.
         </p>
       </div>
 
@@ -82,14 +86,14 @@ function EducationCard({
   current?: boolean;
 }) {
   return (
-    <div className="group relative rounded-2xl border border-border bg-surface p-6 transition-all hover:border-primary/30 md:p-8">
+    <div className="portfolio-card group relative border border-white/5 bg-[#10212d] p-6 transition-all hover:border-primary/40 md:p-8">
       {current && (
-        <span className="absolute right-6 top-6 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+        <span className="absolute right-6 top-6 border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
           Current
         </span>
       )}
       <div className="flex items-start gap-4">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-primary/25 bg-primary/5 text-primary">
           {icon}
         </div>
         <div className="flex-1">

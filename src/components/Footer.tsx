@@ -2,8 +2,8 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/50 bg-hero">
-      <div className="mx-auto max-w-6xl px-6 py-8">
+    <footer className="bg-[#e6dede] px-3 pb-3 md:px-10 md:pb-5">
+      <div className="mx-auto max-w-5xl border-t border-white/5 bg-[#0d1b26] px-7 py-8 sm:px-10 md:px-16">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} Kamran Ali. All rights reserved.

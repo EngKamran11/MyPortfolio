@@ -9,7 +9,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+import { reportError } from "../lib/error-reporting";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
 
@@ -39,7 +39,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    reportError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
 
   return (
@@ -79,24 +79,39 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Kamran Ali — Electrical Engineer & Developer" },
-      { name: "description", content: "Portfolio of Kamran Ali — final-year BS Electrical Engineering student specializing in power systems, robotics, DSP and Flutter development." },
+      {
+        name: "description",
+        content:
+          "Portfolio of Kamran Ali — final-year BS Electrical Engineering student specializing in power systems, robotics, DSP and Flutter development.",
+      },
       { name: "author", content: "Kamran Ali" },
       { property: "og:title", content: "Kamran Ali — Electrical Engineer & Developer" },
-      { property: "og:description", content: "Portfolio of Kamran Ali — final-year BS Electrical Engineering student specializing in power systems, robotics, DSP and Flutter development." },
+      {
+        property: "og:description",
+        content:
+          "Portfolio of Kamran Ali — final-year BS Electrical Engineering student specializing in power systems, robotics, DSP and Flutter development.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@kamranali" },
       { name: "twitter:title", content: "Kamran Ali — Electrical Engineer & Developer" },
-      { name: "twitter:description", content: "Portfolio of Kamran Ali — final-year BS Electrical Engineering student specializing in power systems, robotics, DSP and Flutter development." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bc326130-0baa-4d7a-b8c3-d36773c66764/id-preview-51fe8226--be15b83b-ca30-452d-862c-03d9231cbe7a.lovable.app-1783512428022.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bc326130-0baa-4d7a-b8c3-d36773c66764/id-preview-51fe8226--be15b83b-ca30-452d-862c-03d9231cbe7a.lovable.app-1783512428022.png" },
+      {
+        name: "twitter:description",
+        content:
+          "Portfolio of Kamran Ali — final-year BS Electrical Engineering student specializing in power systems, robotics, DSP and Flutter development.",
+      },
+      { property: "og:image", content: "/images/ka-circle-badge.png" },
+      { name: "twitter:image", content: "/images/ka-circle-badge.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap",
+      },
+      { rel: "icon", href: "/images/ka-circle-badge.png", type: "image/png" },
     ],
   }),
   shellComponent: RootShell,
@@ -125,7 +140,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Navigation />
-      <main className="flex-1">
+      <main className="flex-1 bg-[#e6dede]">
         <Outlet />
       </main>
       <Footer />

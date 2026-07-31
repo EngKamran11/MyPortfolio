@@ -5,7 +5,11 @@ export const Route = createFileRoute("/experience")({
   head: () => ({
     meta: [
       { title: "Experience | Kamran Ali" },
-      { name: "description", content: "Kamran Ali's professional experience — internships in Python, Machine Learning, and Electrical Engineering." },
+      {
+        name: "description",
+        content:
+          "Kamran Ali's professional experience — internships in Python, Machine Learning, and Electrical Engineering.",
+      },
     ],
   }),
   component: ExperiencePage,
@@ -43,15 +47,15 @@ const experiences = [
 
 function ExperiencePage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+    <div className="portfolio-page mx-auto max-w-5xl px-7 py-14 sm:px-10 md:px-16 md:py-20">
       <div className="mb-12">
         <p className="text-sm font-medium uppercase tracking-widest text-primary">Career</p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
           Experience
         </h1>
         <p className="mt-4 max-w-2xl text-muted-foreground">
-          A collection of internships and hands-on experiences that have shaped my technical
-          skills and professional growth.
+          A collection of internships and hands-on experiences that have shaped my technical skills
+          and professional growth.
         </p>
       </div>
 
@@ -65,10 +69,10 @@ function ExperiencePage() {
               {/* Timeline dot */}
               <div className="absolute left-3 top-6 hidden h-3 w-3 rounded-full border-2 border-primary bg-background md:block" />
 
-              <div className="rounded-2xl border border-border bg-surface p-6 transition-all hover:border-primary/30 md:p-8">
+              <div className="portfolio-card border border-white/5 bg-[#10212d] p-6 transition-all hover:border-primary/40 md:p-8">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-primary/25 bg-primary/5 text-primary">
                       {exp.icon}
                     </div>
                     <div>
@@ -76,7 +80,7 @@ function ExperiencePage() {
                       <p className="text-primary">{exp.company}</p>
                     </div>
                   </div>
-                  <span className="shrink-0 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
+                  <span className="shrink-0 border border-white/10 bg-[#0d1b26] px-3 py-1 text-xs font-medium text-muted-foreground">
                     {exp.type}
                   </span>
                 </div>
